@@ -40,7 +40,7 @@ export default {
       if (this.inputMessage!=undefined && this.inputMessage===this.secretKey) {
         this.showMain = true,
         this.$router.push({
-        name: 'Successfully',
+        name: 'Main',
       })
       }
       else {
