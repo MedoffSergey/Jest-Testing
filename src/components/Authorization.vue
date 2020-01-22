@@ -1,18 +1,16 @@
 <template lang="html">
   <div class="v-authorization">
-    <div class="">
-      <h1>{{ msg }}</h1>
-      <h2>{{ title }}</h2>
-    </div>
     <form class="v-authorization__form">
+
       <div class="group">
         <input type="text" placeholder="Кодовое слово" @click="onkeyup()" v-model="inputMessage">
         <a href="#" class="button" @click="chekInput(inputMessage)">
           Отправить
         </a>
       </div>
+
       <div class="v-authorization__form-alert" v-if="showDismissibleAlert">
-        <span>Кодовое слово не совпадает!</span>
+        <span class="count">Кодовое слово не совпадает!</span>
       </div>
 
     </form>
@@ -34,6 +32,7 @@ export default {
       inputMessage: '',        //  Сообщение Input
       showDismissibleAlert: false,
 
+
     }
   },
   methods: {
@@ -41,7 +40,7 @@ export default {
       if (this.inputMessage!=undefined && this.inputMessage===this.secretKey) {
         this.showMain = true,
         this.$router.push({
-        name: 'main',
+        name: 'Successfully',
       })
       }
       else {
@@ -51,6 +50,9 @@ export default {
     },
     onkeyup(){
       this.showDismissibleAlert = false
+    },
+    increment() {
+      this.count+=5
     }
   }
 }

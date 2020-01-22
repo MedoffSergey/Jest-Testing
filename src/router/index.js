@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home.vue'    // Авторизация
-import Successfully from '../components/Successfully.vue'  // Страница успешного вво
 
+import Authorization from '../components/Authorization.vue'  // Страница Ввода данных
+import Successfully from '../components/Successfully.vue'  // Страница успешного вво
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Authorization',
+    component: Authorization
   },
   {
     path: '/Successfully',
